@@ -115,7 +115,7 @@ select {
   overflow: hidden;
 }
 select {
-  color: #ffffff;
+  color: rgb(40, 73, 129);
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   width: 12rem;
