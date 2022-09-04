@@ -3,6 +3,7 @@ import './App.css'
 
 // Importing Components
 import Form from "./components/Form";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <h1>Ari and Drew's Todos</h1>
       </header>
       <Form />
+      <TodoList />
     </div>
   );
 }
