@@ -26,11 +26,15 @@ form input, form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
-  background: white;
+  background: rgb(255, 255, 255);
+}
+
+form button {
+  color: rgb(40, 73, 129);
 }
 
 form button:hover {
-  background: #7dd191;
+  background: rgb(40, 73, 129);
   color: white;
 }
 .todo-container {
@@ -48,7 +52,7 @@ form button:hover {
   margin: 0.5rem;
   background: white;
   font-size: 1.5rem;
-  color: black;
+  color: rgb(111, 111, 111);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,7 +127,7 @@ select {
   top: 0;
   right: 0;
   padding: 1rem;
-  background: #9f9f9f;
+  background: rgb(40, 73, 129);
   cursor: pointer;
   pointer-events: none;
 }
