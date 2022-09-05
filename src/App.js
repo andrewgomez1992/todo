@@ -11,15 +11,6 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([])
 
-  useEffect(() => {
-    getLocalTodos()
-  }, []);
-
-  useEffect(() => {
-    filterHandler()
-    saveLocalTodos(todos)
-  }, [todos, status]);
-
   const filterHandler = () => {
     switch(status){
       case "completed":
@@ -34,18 +25,17 @@ function App() {
     };
   };
 
-  const saveLocalTodos = () => {
-      localStorage.setItem("todos", JSON.stringify(todos))
-  };
+  useEffect(() => {
+    const retriveTodos = JSON.parse(localStorage.getItem("todos"));
+    if (retriveTodos) setTodos(retriveTodos);
+  }, []);
 
-  const getLocalTodos = () => {
-    if(localStorage.getItem("todos") === null){
-      localStorage.setItem("todos", JSON.stringify([]));
-    } else {
-      let todoLocal = JSON.parse(localStorage.getItem("todos"))
-      console.log(todoLocal)
-    };
-  }
+  useEffect(() => {
+    if(todos?.length) { // only store the state if products exists and it's length is greater than 0
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+    filterHandler()
+  }, [todos, status]);
 
   return (
     <div className="App">
